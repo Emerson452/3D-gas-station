@@ -5,7 +5,6 @@ import {
     PerspectiveCamera,
   } from "@react-three/drei";
   import { GasStation } from "./GasStation";
-  
 
   function Background() {
     return <color args={[10, 0, 0]} attach="background" />;
@@ -25,8 +24,7 @@ import {
   }
   
   export function GasStationShow(props) {
-    const { cameraPosition } = props;
-  
+
     return (
       <>
         <Environment 
@@ -34,9 +32,10 @@ import {
             background={"both"}
         />
         
-        <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
+        <OrbitControls target={[10, 1, 7]} maxPolarAngle={1.60} />
+        {/* target = point d'interet, maxPolarAngle = angle max par rapport au sol*/}
   
-        <PerspectiveCamera makeDefault fov={50} position={cameraPosition} />
+        <PerspectiveCamera makeDefault fov={8} position={[75, 25, -25]} />
   
         <Background />
   
