@@ -29,6 +29,11 @@ import {
   
     return (
       <>
+        <Environment 
+            files={process.env.PUBLIC_URL + "/textures/envmap.hdr"}
+            background={"both"}
+        />
+        
         <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
   
         <PerspectiveCamera makeDefault fov={50} position={cameraPosition} />
