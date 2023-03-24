@@ -8,8 +8,8 @@ export function Ground() {
 
     //Obtenir les textures
     const [roughness, normal] = useLoader(TextureLoader, [
-        process.env.PUBLIC_URL + "textures/terrain-roughness.jpg",
-        process.env.PUBLIC_URL + "textures/terrain-normal.jpg",
+        process.env.PUBLIC_URL + "textures/sand-roughness.png",
+        process.env.PUBLIC_URL + "textures/sand-normal.jpg",
     ]);
 
     //Applliquer propriété aux textures
@@ -39,7 +39,7 @@ export function Ground() {
             roughnessMap={roughness}
             
             dithering={true}
-            color={[0.015, 0.015, 0.015]}
+            color={[0.01, 0.01, 0.01]}
             roughness={0.7}
             blur={[1000, 400]}
             mixBlur={30}
