@@ -32,7 +32,7 @@ import {
             background={"both"}
         />
         
-        <OrbitControls target={[10, 1, 7]} maxPolarAngle={1.60} />
+        <OrbitControls target={[10, 1, 7]} maxPolarAngle={1.60} maxDistance={100}/>
         {/* target = point d'interet, maxPolarAngle = angle max par rapport au sol*/}
   
         <PerspectiveCamera makeDefault fov={8} position={[75, 25, -25]} />
