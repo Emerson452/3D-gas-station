@@ -7,9 +7,7 @@ import {
 import { GasStation } from "./GasStation";
 import { Ground } from "./Ground";
 
-function Background() {
-  return <color args={[10, 0, 0]} attach="background" />;
-}
+
 
 function GasStationWithEnvironment() {
   return (
@@ -35,15 +33,14 @@ export function GasStationShow() {
 
       <OrbitControls
         target={[10, 1, 7]}
-        maxPolarAngle={1.6}
-        maxDistance={1000}
+        maxPolarAngle={1.5}
+        maxDistance={100}
         enableDamping
       />
       {/* target = point d'interet, maxPolarAngle = angle max par rapport au sol*/}
 
       <PerspectiveCamera makeDefault fov={8} position={[75, 25, -25]} />
 
-      <Background />
 
       <GasStationWithEnvironment />
 
