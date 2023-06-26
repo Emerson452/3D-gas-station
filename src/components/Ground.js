@@ -47,7 +47,7 @@ export function Ground() {
         
         // utilisation des textures à l'intérieur du réflecteur maillé avec les 3 propriété en dessous
         transparent={true}
-        color={[0.5, 0.5, 0.5]}
+        color={[0.05, 0.05, 0.05]}
         
         metalness={0.05}
         roughness={0.4}
