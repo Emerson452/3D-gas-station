@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
@@ -12,6 +12,19 @@ export function GasStation() {
           process.env.PUBLIC_URL + "models/gasstation/gaz4save.gltf"
         );
 
+        useEffect(() => {
+          const tvObject = gltf.scene.getObjectByName("Pompe");
+      
+          if (tvObject) {
+            // Faites des modifications sur l'objet ici
+            // Par exemple, changer la couleur du matériau de l'objet
+            tvObject.traverse(function (child) {
+              if (child.isMesh) {
+                child.material.color.set(0xff0000); // Rouge
+              }
+            });
+          }
+        }, [gltf]);
   //config du modèle 
   // useEffect(() => {
   //   gltf.scene.scale.set(1, 1, 1);
