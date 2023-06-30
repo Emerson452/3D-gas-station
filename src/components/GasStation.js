@@ -11,15 +11,15 @@ export function GasStation() {
   useEffect(() => {
     const pumpObject = gltf.scene.getObjectByName("Pompe");
 
-    if (pumpObject) {
-      const animateRotation = () => {
-        pumpObject.rotation.y += 1.01; // Modifier la vitesse de rotation selon vos besoins
-      };
+    let animationId;
+    const animateRotation = () => {
+      pumpObject.rotation.y += 0.01; // Modifier la vitesse de rotation selon vos besoins
+      animationId = requestAnimationFrame(animateRotation);
+    };
 
-      const animationId = requestAnimationFrame(animateRotation);
+    animateRotation(); // Lancer l'animation
 
-      return () => cancelAnimationFrame(animationId);
-    }
+    return () => cancelAnimationFrame(animationId);
   }, [gltf]);
 
   useEffect(() => {
