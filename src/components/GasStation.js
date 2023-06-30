@@ -1,12 +1,28 @@
 import React, { useEffect } from "react";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { TextureLoader } from "three";
 
 export function GasStation() {
   const gltf = useLoader(
     GLTFLoader,
     process.env.PUBLIC_URL + "models/gasstation/gaz4save.gltf"
   );
+
+  useEffect(() => {
+    const tvObject = gltf.scene.getObjectByName("Pilier");
+
+    if (tvObject) {
+      const textureLoader = new TextureLoader();
+      const texture = textureLoader.load("textures/popoyoko.png");
+
+      tvObject.traverse(function (child) {
+        if (child.isMesh) {
+          child.material.map = texture;
+        }
+      });
+    }
+  }, [gltf]);
 
   useEffect(() => {
     const pumpObject = gltf.scene.getObjectByName("Pompe");
