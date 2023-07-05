@@ -39,7 +39,7 @@ export function Ground() {
       receiveShadow
     >
       {/* plane avec pour args width et length */}
-      <circleGeometry args={[20, 20]}/>
+      <circleGeometry args={[30, 30]}/>
       {/* propriétés du matériau réflecteur  */}
       <MeshReflectorMaterial
         alphaMap={alphaMap}
