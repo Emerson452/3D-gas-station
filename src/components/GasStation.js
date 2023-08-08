@@ -14,7 +14,7 @@ export function GasStation() {
     if (pumpObject) {
       pumpObject.traverse(function (child) {
         if (child.isMesh) {
-          child.material.color.set(0x000000); // Modifier la couleur du matériau de l'objet
+          child.material.color.set(0x4D4D4D); // Modifier la couleur du matériau de l'objet
         }
       });
     }
@@ -28,7 +28,7 @@ export function GasStation() {
     if (pumpObject) {
       pumpObject.traverse(function (child) {
         if (child.isMesh) {
-          child.material.color.set(0x000000); // Modifier la couleur du matériau de l'objet
+          child.material.color.set(0x3B3B3B); // Modifier la couleur du matériau de l'objet
         }
       });
     }
