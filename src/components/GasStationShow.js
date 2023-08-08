@@ -24,11 +24,7 @@ function GasStationWithEnvironment() {
 export function GasStationShow() {
   return (
     <>
-      <Environment
-        files={process.env.PUBLIC_URL + "/textures/envmap.hdr"}
-        background={"both"}
-        // both = afficher l'environnement HDR comme fond et comme réflexion de la scène
-      />
+      
 
       <OrbitControls
         target={[10, 1, 7]}
