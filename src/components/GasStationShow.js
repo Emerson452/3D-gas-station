@@ -39,7 +39,7 @@ export function GasStationShow() {
       {/* target = point d'interet, maxPolarAngle = angle max par rapport au sol*/}
 
       <PerspectiveCamera makeDefault fov={8} position={[75, 25, -25]} />
-      <spotLight color={0xffffff} intensity={1} position={[20, 1, 1]} />
+      <spotLight color={0xffffff} intensity={0.6} position={[30, 10, 10]} />
       <GasStationWithEnvironment />
       <Porsche />
       <Ground />
