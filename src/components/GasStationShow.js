@@ -6,8 +6,7 @@ import {
 } from "@react-three/drei";
 import { GasStation } from "./GasStation";
 import { Ground } from "./Ground";
-
-
+import { Porsche } from "./Porsche";
 
 function GasStationWithEnvironment() {
   return (
@@ -41,9 +40,8 @@ export function GasStationShow() {
 
       <PerspectiveCamera makeDefault fov={8} position={[75, 25, -25]} />
 
-
       <GasStationWithEnvironment />
-
+      <Porsche />
       <Ground />
     </>
   );
