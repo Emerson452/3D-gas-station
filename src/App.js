@@ -11,7 +11,7 @@ function App() {
     // Simulate loading time with a setTimeout
     setTimeout(() => {
       setIsLoading(false);
-    }, 20000000); // Change this value to the desired loading time in milliseconds
+    }, 8000); // Change this value to the desired loading time in milliseconds
   }, []);
 
   return (
@@ -20,7 +20,7 @@ function App() {
         <LoadingScreen />
       ) : (
         <div>
-          <div className="text-container">test</div>
+          <div className="text-container">Made by Emerson</div>
 
           <div className="canvas-container">
             <Canvas shadows>

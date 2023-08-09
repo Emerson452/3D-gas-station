@@ -27,7 +27,16 @@ canvas {
   gap: 6%;
 }
 .ldBar {
-  width: 2rem;
-  height: 8rem;
-  background-color: white;
+    width: 4rem;
+    height: 8rem;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
 }
+
+.ldBar-fill {
+    height: 100%;
+    background-color: #8b8b8b;
+    transition: width 1s ease;
+  }
