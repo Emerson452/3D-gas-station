@@ -11,7 +11,7 @@ function App() {
     // Simulate loading time with a setTimeout
     setTimeout(() => {
       setIsLoading(false);
-    }, 10000); // Change this value to the desired loading time in milliseconds
+    }, 20000000); // Change this value to the desired loading time in milliseconds
   }, []);
 
   return (
