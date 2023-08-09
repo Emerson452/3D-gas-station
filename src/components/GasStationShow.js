@@ -8,10 +8,10 @@ import { Porsche } from "./Porsche";
 import { useState } from "react";
 
 
-export function CustomButton({ onClick, children }) {
+export function CustomButton({ onClick, children, position }) {
   return (
-    <mesh onClick={onClick}>
-      <planeGeometry args={[1, 0.2]} />
+    <mesh onClick={onClick} position={position}>
+      <planeGeometry position={[10, 2, 0]} args={[2, 0.2]} />
       <meshBasicMaterial color="white" />
         {children}
     </mesh>
@@ -25,11 +25,11 @@ export function GasStationShow() {
   return (
     <>
 {/* Boutons pour contrôler les spotlights */}
-<CustomButton onClick={() => setSpotlight1On(!spotlight1On)}>
-        {spotlight1On ? 'Éteindre Spotlight 1' : 'Allumer Spotlight 1'}
+<CustomButton onClick={() => setSpotlight1On(!spotlight1On)}position={[10, 2, 10]} >
+        {spotlight1On ? 'Off 1' : 'On 1'}
       </CustomButton>
-      <CustomButton onClick={() => setSpotlight2On(!spotlight2On)}>
-        {spotlight2On ? 'Éteindre Spotlight 2' : 'Allumer Spotlight 2'}
+      <CustomButton onClick={() => setSpotlight2On(!spotlight2On)} position={[0, 2, 5]}>
+        {spotlight2On ? 'Off 2' : 'On 2'}
       </CustomButton>
 
       <OrbitControls
