@@ -12,9 +12,11 @@ export function CustomButton({
   lightColor,
   spotlightOn,
   onPointerOver, // survol de la souris
-  onPointerOut, // sortie de la souris
+  onPointerOut,
 }) {
-  return (
+  const buttonColor = spotlightOn ? "white" : "grey";
+
+    return (
     <group
       onClick={onClick}
       position={position}
@@ -24,10 +26,11 @@ export function CustomButton({
     >
       <mesh>
         <boxGeometry args={[1, 0.2, 1]} />
-        <meshBasicMaterial color="white" />
+        <meshBasicMaterial color={buttonColor} />
       </mesh>
       {children}
-      {spotlightOn && (
+      
+      {spotlightOn && (  // Condition pour afficher la lumière basée sur l'état
         <pointLight
           color={0xffffff}
           intensity={1}
@@ -64,8 +67,8 @@ export function GasStationShow() {
         position={[14, 1, -2]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         spotlightOn={spotlight2On}
-        onPointerOver={() => setSpotlight1On(true)}
-        onPointerOut={() => setSpotlight1On(false)}
+        onPointerOver={() => setSpotlight2On(true)}
+        onPointerOut={() => setSpotlight2On(false)}
       >
         {spotlight2On ? "Off 2" : "On 2"}
       </CustomButton>
