@@ -9,8 +9,8 @@ export function CustomButton({
   children,
   position,
   rotation,
-  spotlightOn,
-  lightColor
+  lightColor,
+  spotlightOn
 }) {
   return (
     <group onClick={onClick} position={position} rotation={rotation}>
@@ -20,7 +20,13 @@ export function CustomButton({
       </mesh>
       {children}
       {spotlightOn && (
-        <spotLight color={lightColor} intensity={0.2} position={[0, 1, 0]} />
+        <pointLight
+          color={0xffffff}
+          intensity={1}
+          position={[0, 0.1, 0]} // Adjust this position based on the button
+          distance={10} // Adjust the distance of light propagation
+          decay={2} // Adjust the light decay
+        />
       )}
     </group>
   );
@@ -35,19 +41,17 @@ export function GasStationShow() {
       {/* Boutons pour contrôler les spotlights */}
       <CustomButton
         onClick={() => setSpotlight1On(!spotlight1On)}
-        position={[15, 0.01, -2]}
+        position={[15, 1, -2]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         spotlightOn={spotlight1On}
-        lightColor={0xffff00}
       >
-        {spotlight1On ? "Off 1" : "On 1"}
+        {spotlight1On ? "Off 1tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt" : "On 1"}
       </CustomButton>
       <CustomButton
         onClick={() => setSpotlight2On(!spotlight2On)}
-        position={[14, 0.01, -2]}
+        position={[14, 1, -2]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         spotlightOn={spotlight2On}
-        lightColor={0xff00ff}
       >
         {spotlight2On ? "Off 2" : "On 2"}
       </CustomButton>
@@ -62,7 +66,7 @@ export function GasStationShow() {
 
       <PerspectiveCamera makeDefault fov={8} position={[75, 25, -25]} />
 
-      <spotLight
+      {/* <spotLight
         color={0xffffff}
         intensity={0.6}
         position={[30, 10, 10]}
@@ -73,9 +77,9 @@ export function GasStationShow() {
         intensity={0.6}
         position={[20, 10, 30]}
         visible={spotlight2On}
-      />
+      /> */}
 
-      <spotLight color={0xffffff} intensity={0.6} position={[30, 10, 10]} />
+      <spotLight color={0xffffff} intensity={0.8} position={[30, 10, 10]} />
       <GasStation />
       <Porsche />
       <Ground />
