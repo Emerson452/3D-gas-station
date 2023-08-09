@@ -10,10 +10,18 @@ export function CustomButton({
   position,
   rotation,
   lightColor,
-  spotlightOn
+  spotlightOn,
+  onPointerOver, // survol de la souris
+  onPointerOut, // sortie de la souris
 }) {
   return (
-    <group onClick={onClick} position={position} rotation={rotation}>
+    <group
+      onClick={onClick}
+      position={position}
+      rotation={rotation}
+      onPointerOver={onPointerOver}
+      onPointerOut={onPointerOut}
+    >
       <mesh>
         <boxGeometry args={[1, 0.2, 1]} />
         <meshBasicMaterial color="white" />
@@ -44,14 +52,20 @@ export function GasStationShow() {
         position={[15, 1, -2]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         spotlightOn={spotlight1On}
+        onPointerOver={() => setSpotlight1On(true)}
+        onPointerOut={() => setSpotlight1On(false)}
       >
-        {spotlight1On ? "Off 1tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt" : "On 1"}
+        {spotlight1On
+          ? "Off 1tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt"
+          : "On 1"}
       </CustomButton>
       <CustomButton
         onClick={() => setSpotlight2On(!spotlight2On)}
         position={[14, 1, -2]}
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         spotlightOn={spotlight2On}
+        onPointerOver={() => setSpotlight1On(true)}
+        onPointerOut={() => setSpotlight1On(false)}
       >
         {spotlight2On ? "Off 2" : "On 2"}
       </CustomButton>
