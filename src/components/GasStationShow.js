@@ -96,7 +96,7 @@ export function GasStationShow() {
         visible={spotlight2On}
       /> */}
 
-      <spotLight color={0xffffff} intensity={0.8} position={[30, 10, 10]} />
+      <spotLight color={0xffffff} intensity={1} position={[30, 10, 10]} />
       <GasStation />
       <Porsche />
       <Ground />
